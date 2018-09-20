@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>userList</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>用户列表</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>电子邮箱</th>
+            <th>手机号码</th>
+            <th>真实姓名</th>
+            <th>昵称</th>
+            <th>身份证号</th>
+            <th>类型</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>最后更新时间</th>
+            <th>备注</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="user : ${users}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.mobileNum}"></td>
+            <td th:text="${user.realName}"></td>
+            <td th:text="${user.nickName}"></td>
+            <td th:text="${user.identityCardNum}"></td>
+            <td th:text="${user.type}"></td>
+            <td th:text="${user.status}"></td>
+            <td th:text="${user.createTime}"></td>
+            <td th:text="${user.lastUpdateTime}"></td>
+            <td th:text="${user.remark}"></td>
+            <td><a th:href="@{/users/toEdit(id=${user.id})}">修改</a></td>
+            <td><a th:href="@{/users/delete(id=${user.id})}">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a href="/users/toAdd" th:href="@{/users/toAdd}" class="btn btn-info">add</a>
+    </div>
+</div>
+
+</body>
+</html>
