@@ -15,6 +15,7 @@ public class ProjectCategory {
     @Setter
     @Getter
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
     private Integer id;
 
     @Setter
