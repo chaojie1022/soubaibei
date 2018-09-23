@@ -30,6 +30,7 @@ public class CategoryProjectRel {
 
     @Setter
     @Getter
+    @Column(length = 15)
     private String status;
 
     @Setter

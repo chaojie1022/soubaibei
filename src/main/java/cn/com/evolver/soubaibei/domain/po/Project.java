@@ -24,6 +24,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String code;
 
     /**
@@ -31,6 +32,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String name;
 
     /**
@@ -45,6 +47,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String tokenName;
 
     /**
@@ -52,6 +55,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 15)
     private String tokenType;
 
     /**
@@ -117,6 +121,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String telegramAccount;
 
     /**
@@ -124,14 +129,15 @@ public class Project {
      */
     @Setter
     @Getter
-    private String telegramCount;
+    private Integer telegramCount;
 
     /**
      * 推特账号
      */
     @Setter
     @Getter
-    private String twitter;
+    @Column(length = 63)
+    private String twitterAccount;
 
     /**
      * 推特关注人数
@@ -145,6 +151,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String facebookAccount;
 
     /**
@@ -159,6 +166,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String redditAccount;
 
     /**
@@ -173,6 +181,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 63)
     private String githubAccount;
 
     /**
@@ -201,6 +210,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 15)
     private String type;
 
     /**
@@ -208,6 +218,7 @@ public class Project {
      */
     @Setter
     @Getter
+    @Column(length = 15)
     private String status;
 
     /**
@@ -232,7 +243,5 @@ public class Project {
     @Getter
     @LastModifiedDate
     private Date lastModifiedTime;
-
-
 
 }

@@ -24,10 +24,12 @@ public class ProjectCategory {
 
     @Setter
     @Getter
+    @Column(length = 63)
     private String code;
 
     @Setter
     @Getter
+    @Column(length = 63)
     private String name;
 
     @Setter
@@ -40,10 +42,12 @@ public class ProjectCategory {
 
     @Setter
     @Getter
+    @Column(length = 15)
     private String type;
 
     @Setter
     @Getter
+    @Column(length = 15)
     private String status;
 
     @Setter
