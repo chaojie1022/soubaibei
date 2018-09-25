@@ -1,5 +1,6 @@
 package cn.com.evolver.soubaibei.domain.po;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
