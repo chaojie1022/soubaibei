@@ -30,14 +30,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
-        user.setCreateTime(new Date());
-        user.setLastUpdateTime(new Date());
         userRepository.save(user);
     }
 
     @Override
     public void edit(User user) {
-        user.setLastUpdateTime(new Date());
         userRepository.save(user);
     }
 

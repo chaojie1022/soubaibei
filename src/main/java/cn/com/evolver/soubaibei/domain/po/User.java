@@ -1,82 +1,58 @@
 package cn.com.evolver.soubaibei.domain.po;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
-
+@Data
 @Table(name = "tb_user")
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User {
 
-    @Setter
-    @Getter
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
 
-    @Setter
-    @Getter
     @Column(nullable = false,unique = true,length = 63)
     private String username;
 
-    @Setter
-    @Getter
     @Column(nullable = false,length = 63)
     private String password;
 
-    @Setter
-    @Getter
     @Column(unique = true,length = 63)
     private String email;
 
-    @Setter
-    @Getter
     @Column(unique = true,length = 63)
     private String mobileNum;
 
-    @Setter
-    @Getter
     @Column(length = 63)
     private String realName;
 
-    @Setter
-    @Getter
     @Column(length = 63)
     private String nickName;
 
-    @Setter
-    @Getter
     @Column(length = 63)
     private String identityCardNum;
 
-    @Setter
-    @Getter
     @Column(length = 15)
     private String type;
 
-    @Setter
-    @Getter
     @Column(length = 15)
     private String status;
 
-    @Setter
-    @Getter
+    @CreatedDate
     @Column(updatable = false)
-    private Date createTime;
+    private Date createdTime;
 
-    @Setter
-    @Getter
-    @Column
-    private Date lastUpdateTime;
+    @LastModifiedDate
+    private Date lastModifiedTime;
 
-    @Setter
-    @Getter
     @Column
     private String remark;
 
