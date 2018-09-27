@@ -1,0 +1,37 @@
+package cn.com.evolver.soubaibei.domain.po;
+
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Data
+@Entity
+@Table(name = "tb_category_project_rel")
+public class CategoryProjectRel {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private Long categoryId;
+
+    @Column(nullable = false)
+    private Long projectId;
+
+    @Column(length = 15)
+    private String status;
+
+    private String remark;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private Date createdTime;
+
+    @LastModifiedDate
+    private Date lastModifiedTime;
+
+}

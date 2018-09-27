@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>userList</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap-grid.min.css" />
 </head>
 <body class="container">
 <br/>
@@ -42,8 +42,8 @@
             <td th:text="${user.identityCardNum}"></td>
             <td th:text="${user.type}"></td>
             <td th:text="${user.status}"></td>
-            <td th:text="${user.createTime}"></td>
-            <td th:text="${user.lastUpdateTime}"></td>
+            <td th:text="${user.createdTime}"></td>
+            <td th:text="${user.lastModifiedTime}"></td>
             <td th:text="${user.remark}"></td>
             <td><a th:href="@{/users/toEdit(id=${user.id})}">修改</a></td>
             <td><a th:href="@{/users/delete(id=${user.id})}">删除</a></td>

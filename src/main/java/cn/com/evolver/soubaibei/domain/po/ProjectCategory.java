@@ -3,42 +3,30 @@ package cn.com.evolver.soubaibei.domain.po;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Table(name = "tb_user")
 @Entity
-@EntityListeners(AuditingEntityListener.class)
-public class User {
+@Table(name = "tb_project_category")
+public class ProjectCategory {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-
-    @Column(nullable = false,unique = true,length = 63)
-    private String username;
-
-    @Column(nullable = false,length = 63)
-    private String password;
-
-    @Column(unique = true,length = 63)
-    private String email;
-
-    @Column(unique = true,length = 63)
-    private String mobileNum;
+    private Integer parentId;
 
     @Column(length = 63)
-    private String realName;
+    private String code;
 
     @Column(length = 63)
-    private String nickName;
+    private String name;
 
-    @Column(length = 63)
-    private String identityCardNum;
+    private String description;
+
+    private Integer level;
 
     @Column(length = 15)
     private String type;
@@ -53,7 +41,5 @@ public class User {
     @LastModifiedDate
     private Date lastModifiedTime;
 
-    @Column
     private String remark;
-
 }
