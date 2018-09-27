@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="ow" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="  assets/bootstrap-table/src/bootstrap-table.css">
+  <!--<link rel="stylesheet" href="assets/bootstrap-table/dist/bootstrap-table.min.css">-->
+  <link href="assets/toastr/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style/crontrast.css">
+  <link rel="stylesheet" type="text/css" href="style/header.css">
+  <link rel="stylesheet" type="text/css" href="style/content.css">
+
+  <script src="js/jquery-1.11.3.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/bootstrap-table/src/bootstrap-table.js"></script>
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script src="assets/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+  <script src="assets/bootstrap-table/src/extensions/export/bootstrap-table-export.js"></script>
+  <script src="js/tableExport.js"></script>
+  <script src="assets/toastr/toastr.min.js"></script>
+</head>
+
+<body>
+  <div class="S_header">
+    <div class="S_header_ps S_vetically">
+      <div class="S_W ">
+        <div class="S_H_ps_Tit">BTC/CNY :</div>
+        <div class="S_H_ps_Con">￥ 44074.05↑</div>
+        <div class="S_H_ps_Tit">ETH/CNY :</div>
+        <div class="S_H_ps_Con">￥ 3154.44↑</div>
+        <div class="S_H_ps_Tit">EOS/CNY :</div>
+        <div class="S_H_ps_Con">￥ 58.91↑</div>
+      </div>
+    </div>
+    <div class="S_W">
+      <div class="S_Logo S_center">搜百倍</div>
+      <div class="S_form">
+        <input id="S_ICOSearch" class="S_ICOSearch" placeholder="项目名/投资机构/项目类型" />
+        <button id="S_but_Search" class="S_but_Search">搜！</button>
+      </div>
+
+    </div>
+  </div>
+  <div id="searchdis">
+    <div class="S_Wrap  clear">
+      <div style="height: 40px;padding-top: 10px;" class="S_W">
+        <div class="eliminateCriteria "> <a href="javascript:;">【清空全部】</a> </div>
+        <div>
+          <div class="cond">已选条件：</div>
+          <div id="cond" style="height: 20px;padding: 0;">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hasBeenSelected clearfix">
+      <div class="screen-term position_r S_W S_vetically">
+        <div class="selectNumberScreen">
+          <div id="selectList" class="screenBox ">
+            <dl id="S_investment" class="listIndex S_W" attr="投资机构">
+              <dt>投资机构</dt>
+              <dd style="padding-right: 130px;">
+                <ul id="S_show_g" style="display:none;" class="S_show_g">
+                  <li><a href="javascript:;" id="S_gfc" data-sh="0">所有品牌</a></li>
+                  <li><a href="javascript:;" data-sh="A">A</a></li>
+                  <li><a href="javascript:;" data-sh="B">B</a></li>
+                  <li><a href="javascript:;" data-sh="C">C</a></li>
+                  <li><a href="javascript:;" data-sh="D">D</a></li>
+                  <li><a href="javascript:;" data-sh="E">E</a></li>
+                  <li><a href="javascript:;" data-sh="F">F</a></li>
+                  <li><a href="javascript:;" data-sh="G">G</a></li>
+                  <li><a href="javascript:;" data-sh="H">H</a></li>
+                  <li><a href="javascript:;" data-sh="I">I</a></li>
+                  <li><a href="javascript:;" data-sh="M">M</a></li>
+                  <li><a href="javascript:;" data-sh="P">P</a></li>
+                  <li><a href="javascript:;" data-sh="S">S</a></li>
+                  <li><a href="javascript:;" data-sh="T">T</a></li>
+                  <li><a href="javascript:;" data-sh="X">X</a></li>
+                  <li><a href="javascript:;" data-sh="Y">Y</a></li>
+                  <li><a href="javascript:;" data-sh="A">Z</a></li>
+                </ul>
+                <div id="investmentul_g" class="clear investmentul_g">
+                  <ul class="investmentul">
+                    <li data-top="Y" data-sh="A" data-name="飞利浦" data-type="0" data-value="0"><a href="javascript:;"><img src="~/../image/PHILIPS.jpg"  width="102" height="36"/>飞利浦（PHILIPS）</a></li>
+                    <li data-top="Y" data-sh="A" data-name="小米" data-type="0" data-value="1"><a href="javascript:;"><img src="~/../image/MI.jpg"  width="102" height="36"/>小米（MI）</a></li>
+                    <li data-top="Y" data-sh="A" data-name="小米1" data-type="0" data-value="2"><a href="javascript:;"><img src="~/../image/Panasonic.jpg"  width="102" height="36"/>松下（Panasonic）</a></li>
+                    <li data-top="Y" data-sh="A" data-name="小米2" data-type="0" data-value="3"><a href="javascript:;"><img src="~/../image/Blueair.jpg"  width="102" height="36"/>布鲁雅尔（Blueair）</a></li>
+                    <li data-top="Y" data-sh="B" data-name="小米3" data-type="0" data-value="4"><a href="javascript:;"><img src="~/../image/Honeywell.jpg"  width="102" height="36"/>霍尼韦尔（Honeywell）</a></li>
+                    <li data-top="Y" data-sh="B" data-name="小米4" data-type="0" data-value="5"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="B" data-name="小米5" data-type="0" data-value="6"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="B" data-name="小米6" data-type="0" data-value="7"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="C" data-name="小米7" data-type="0" data-value="8"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="C" data-name="小米8" data-type="0" data-value="9"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="C" data-name="小米9" data-type="0" data-value="10"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="C" data-name="小米10" data-type="0" data-value="11"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="D" data-name="小米11" data-type="0" data-value="12"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="D" data-name="小米12" data-type="0" data-value="13"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="D" data-name="小米13" data-type="0" data-value="14"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                    <li data-top="Y" data-sh="D" data-name="小米14" data-type="0" data-value="15"><a href="javascript:;"><img src="~/../image/Haier.jpg" width="102" height="36">海尔（Haier）</a></li>
+                  </ul>
+                </div>
+                <div class="investmentul_g_s">
+                  <a href="javascript:;" class="" id="investmentul_g_s1">更多<i class="glyphicon glyphicon-plus"></i></a>
+                </div>
+              </dd>
+            </dl>
+            <dl class="listIndex S_W" attr="类型">
+              <dt>类型</dt>
+              <dd>
+                <ul id="genre">
+                  <li data-name="智能合约" data-type="1" data-value="0"><a href="javascript:;">智能合约</a></li>
+                  <li data-name="资产交易" data-type="1" data-value="1"><a href="javascript:;">资产交易</a></li>
+                  <li data-name="操作系统" data-type="1" data-value="2"><a href="javascript:;">操作系统</a></li>
+                  <li data-name="银行结算" data-type="1" data-value="3"><a href="javascript:;">银行结算</a></li>
+                  <li data-name="社交通讯" data-type="1" data-value="4"><a href="javascript:;">社交通讯</a></li>
+                  <li data-name="物联网" data-type="1" data-value="5"><a href="javascript:;">物联网</a></li>
+                  <li data-name="文件存储" data-type="1" data-value="6"><a href="javascript:;">文件存储</a></li>
+                  <li data-name="其它" data-type="1" data-value="7"><a href="javascript:;">其它</a></li>
+                </ul>
+
+              </dd>
+            </dl>
+            <dl class="listIndex S_W" attr="流通市值">
+              <dt>流通市值</dt>
+              <dd>
+                <ul id="market">
+                  <li data-name="TOP100" data-type="2" data-value="0"><a href="javascript:;">TOP100</a></li>
+                  <li data-name="100~200" data-type="2" data-value="1"><a href="javascript:;">100~200</a></li>
+                  <li data-name="200~500" data-type="2" data-value="2"><a href="javascript:;">200~500 </a></li>
+                  <li data-name="500以后" data-type="2" data-value="3"><a href="javascript:;">500以后</a></li>
+                  <li>
+                    <div class="custom"><span>自定义:</span>&nbsp;
+                      <input name="" placeholder="￥最小市值" type="text" id="markettext1" /> &nbsp;-&nbsp;
+                      <input name="" placeholder="￥最大市值" type="text" id="markettext2" /> &nbsp;
+                      <div class="ROIbtn">
+                        <a href="javascript:;" class="" id="marketbtn">确定</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+              </dd>
+            </dl>
+            <dl class="listIndex S_W" attr="回报率">
+              <dt>回报率</dt>
+              <dd>
+                <span style=" margin-left: 10px;" class="spanfloat"><stong>翻倍</stong></span>
+                <ul id="ROI_g">
+                  <li data-name="100" data-type="3" data-value="0"><a href="javascript:;">100</a></li>
+                  <li data-name="10~100" data-type="3" data-value="1"><a href="javascript:;">10~100</a></li>
+                  <li data-name="5~10" data-type="3" data-value="2"><a href="javascript:;">5~10 </a></li>
+                  <li data-name="1~5" data-type="3" data-value="3"><a href="javascript:;">1~5</a></li>
+
+                </ul>
+                <span class="spanfloat"><stong>破发</stong></span>
+                <ul id="ROI_b">
+                  <li data-name="0.5~1" data-type="3" data-value="4"><a href="javascript:;">0.5~1</a></li>
+                  <li data-name="0.1~0.5" data-type="3" data-value="5"><a href="javascript:;">0.1~0.5</a></li>
+                  <li data-name="<0.1" data-type="3" data-value="6">
+                    <a href="javascript:;">
+                      <0.1 </a>
+                  </li>
+                  <li>
+                    <div class="custom"><span>自定义:</span>&nbsp;
+                      <input name="" placeholder="最小回报率%" type="text" id="ROItext1" /> &nbsp;-&nbsp;
+                      <input name="" placeholder="最大回报率%" type="text" id="ROItext2" /> &nbsp;
+                      <div class="ROIbtn">
+                        <a href="javascript:;" class="" id="ROIbtn">确定</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl class="listIndex S_W" attr="更多选项">
+              <dt>更多选项</dt>
+              <dd>
+                <div id="tabAll" style="padding-left:10px;">
+                  <a href="javascript:;" data-id="trendT" id="trend" class="S_l_a " values2="" values1="" attrval="不限">近期走势 <i class="glyphicon glyphicon-plus"></i></a>
+                  <a href="javascript:;" data-id="countryT" id="country" class="S_l_a" values2="" values1="" attrval="不限">发行国家 <i class="glyphicon glyphicon-plus"></i></a>
+
+                </div>
+            </dl>
+            <div id="tabAllChild" class="position_r">
+              <div data-parentid="trend" id="trendT" style="display:none;" class="S_W S_l_a_top">
+                <span class="spanfloat"> <stong>相比大盘</stong></span>
+                <ul>
+                  <li data-name="<-50%" data-type="4" data-value="0">
+                    <a href="javascript:;">
+                      <-50%</a>
+                  </li>
+                  <li data-name="-50%~-30%" data-type="4" data-value="1"><a href="javascript:;">-50%~-30%</a></li>
+                  <li data-name="-10%~10%" data-type="4" data-value="2"><a href="javascript:;">-10%~10%</a></li>
+                  <li data-name="10%~30%" data-type="4" data-value="3"><a href="javascript:;">10%~30%</a></li>
+                  <li data-name="30%~50%" data-type="4" data-value="4"><a href="javascript:;">30%~50%</a></li>
+                  <li data-name=">50%" data-type="4" data-value="5"><a href="javascript:;">>50%</a></li>
+                </ul>
+              </div>
+              <div data-parentid="country" id="countryT" style="display:none;" class="S_W S_l_a_top">
+                <ul>
+                  <li data-name="中国" data-type="5" data-value="0"><a href="javascript:;">中国</a></li>
+                  <li data-name="美国" data-type="5" data-value="1"><a href="javascript:;">美国</a></li>
+                  <li data-name="日本" data-type="5" data-value="2"><a href="javascript:;">日本</a></li>
+                  <li data-name="韩国" data-type="5" data-value="3"><a href="javascript:;">韩国</a></li>
+                  <li data-name="欧洲" data-type="5" data-value="4"><a href="javascript:;">欧洲</a></li>
+                  <li data-name="其它" data-type="5" data-value="5"><a href="javascript:;">其它</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!--<div class="S_selector">
+            <div class="S_selector_Institution">
+                     <div class="sl-key">
+						<strong>投资机构：</strong> 
+					 </div>
+					 <div class="sl-value">
+                          <ul class="sl-b-letter">
+                               <li data-initial="0" class="curr">所有品牌</li>
+									<li data-initial="A">A</li>
+									<li data-initial="B">B</li>
+									<li data-initial="C">C</li>
+									<li data-initial="D">D</li>
+									<li data-initial="F">F</li>
+									<li data-initial="G">G</li>
+									<li data-initial="H">H</li>
+									<li data-initial="I">I</li>
+									<li data-initial="L">L</li>
+									<li data-initial="M">M</li>
+									<li data-initial="P">P</li>
+									<li data-initial="S">S</li>
+									<li data-initial="T">T</li>
+									<li data-initial="X">X</li>
+									<li data-initial="Y">Y</li>
+									<li data-initial="Z">Z</li>
+						  </ul>
+						  <div class="clr"></div>
+					 </div>
+			</div>
+		</div>-->
+
+    <div class="S_W S_content" style="display:block;">
+      <div id="ICORowDetail" style="position:relative;float:left;width:950px;">
+
+      </div>
+      <!--<div class="ICORow">
+          <div class="ICORowimg">
+            <img width="70px" height="70px" src="~/../image/102.jpeg" alt="eos"/>
+            <strong style="line-height: 30px;font-size: 16px;">EOS</strong>
+          </div>
+          <div class="ICORowdetail" >
+              <div style="width:150px;">
+                <div style="display: flex;"><strong class="ICORD_name">￥47.51</strong><div style="padding-top: 8px;
+            padding-left: 3px;color: #009966;font-weight: 700;">5.4%</div></div>
+                <div style="padding-left:3px;">日成交额：¥53亿</div>
+                <div style="padding-left:3px;">众筹价格：￥7</div>
+                <div style="padding-left:3px;">发行时间：2017-07-02</div>
+              </div>
+              <div style="width: 498px;overflow:hidden;">
+                    <div>
+                     <div class="ICORD_desc"><span><a  href="https://eos.io/" target="_blank">EOS</a> IO is software that introduces a blockchain architecture designed to enable vertical....</span></div>  
+                    </div>
+                    <div class="ICOExplain">
+                      <div>
+                        <div>流通市值：¥425亿</div>
+                        <div>项目进度：主网上线</div>
+                        <div>项目类型：智能合约</div>
+                      </div>
+                     <div class="ICORD_udesc">
+                          <div><div class="ICORD_udescJ">推特粉丝(7d)</div>5653(+7)</div>
+                          <div><div class="ICORD_udescJ">电报成员(7d)</div>13952/+231</div>
+                          <div><div class="ICORD_udescJ">活跃用户(24h)</div>422/2.4%</div>
+                     </div>
+                   </div>
+              </div>
+          </div>
+          <div class="ICORowchart">
+             <div> 
+                 <svg class="peity"  style="height:64px; width:100%;">
+                 <polygon fill="none" points="0 19.5 0 11.1875 2.962962962962963 11.78125 5.925925925925926 11.1875 8.88888888888889 10 11.851851851851851 14.15625 14.814814814814813 8.8125 17.77777777777778 11.78125 20.74074074074074 15.9375 23.703703703703702 19.5 26.666666666666664 17.71875 29.629629629629626 5.84375 32.59259259259259 5.84375 35.55555555555556 4.0625 38.51851851851852 0.5 41.48148148148148 7.03125 44.44444444444444 7.03125 47.407407407407405 4.0625 50.37037037037037 3.46875 53.33333333333333 0.5 56.29629629629629 4.0625 59.25925925925925 10 62.22222222222222 11.1875 65.18518518518518 9.40625 68.14814814814814 7.03125 71.11111111111111 7.625 74.07407407407408 7.625 77.03703703703704 10 80 9.40625 80 19.5"></polygon>
+                 <polyline fill="none" points="0 11.1875 2.962962962962963 11.78125 5.925925925925926 11.1875 8.88888888888889 10 11.851851851851851 14.15625 14.814814814814813 8.8125 17.77777777777778 11.78125 20.74074074074074 15.9375 23.703703703703702 19.5 26.666666666666664 17.71875 29.629629629629626 5.84375 32.59259259259259 5.84375 35.55555555555556 4.0625 38.51851851851852 0.5 41.48148148148148 7.03125 44.44444444444444 7.03125 47.407407407407405 4.0625 50.37037037037037 3.46875 53.33333333333333 0.5 56.29629629629629 4.0625 59.25925925925925 10 62.22222222222222 11.1875 65.18518518518518 9.40625 68.14814814814814 7.03125 71.11111111111111 7.625 74.07407407407408 7.625 77.03703703703704 10 80 9.40625" stroke="#3499da" stroke-width="1" stroke-linecap="square">
+                   </polyline>
+                   </svg>
+             </div>
+             <div style="float:left;margin-left:20px;padding-top:5px;">价格趋势(7天)</div>
+             <div style="float:left;margin-left:10px;"><div class="ICORowbut">加入对比<i class="glyphicon glyphicon-heart"></i></div></div>
+          </div>
+      </div>-->
+      <div class="ICOContrast">
+        <div>
+          <strong>对比清单</strong>
+        </div>
+        <div class="ICOCWrap">
+          <!--<div class="ICOContrastRow">
+               <div><img width="70px" height="70px" src="~/../image/102.jpeg" alt="eos"/></div>
+               <div>
+                  <div class="ICOCRowTit">EOS</div>
+                  <div class="ICOCRowTittext">eos</div>
+               </div>
+               <div class="ICOCRowI"><i class="glyphicon glyphicon-remove-sign"></i></div>
+             </div>-->
+
+        </div>
+        <div style="margin-top: 2px;">
+          <div id="ICOCRemoveAll" style="float:left;width:72px;" class="ICOCRemoveAll">清空<i class="glyphicon glyphicon-remove ICOCRemoveAlli"></i></div>
+          <div id="ICOContrast" style="float:right;width:110px;" class="ICOCRemoveAll">开始对比<i style="margin-left:4px;" class="glyphicon glyphicon-stats"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="S_Wrap clear">
+    <div class="S_W crontop">
+         <div class=""> <label for="crontext">添加对比代币：</label><input data-flag="0" id="crontext" placeholder="请输入代币名称" type="text"></div> 
+         <div id="cronbtn" class="crontopdiv">
+          <a href="javascript:;" class="" >加入对比<i class="glyphicon glyphicon-plus"></i></a> </div>
+         <div  data-id="cronbtnOC" id="cronbtnOC" class="crontopdiv"><a href="javascript:;"  class="" >已选列表<i class="glyphicon glyphicon-menu-down"></i></a></div>
+         <div  id="cronbtnremove" class="crontopdiv"><a href="javascript:;" >清空列表<i class="glyphicon glyphicon-remove"></i></a></div>
+         <div style="float:right;padding-top:2px;"> <a href="javascript:;" class="" id="cronbtnreturn">【返回上级操作】</a></div>
+    </div>
+    <div data-id="crontopdivShow" style="display:none;" class="S_W crontopdivShowTit">
+       <div data-id="crontopdivShow"  class="S_W crontopdivShow">
+          <ul id="crontopdivShowul">
+              <li><a href="javascript:;" class="" id="cronbtn">加入对比<i  class="removelii glyphicon glyphicon-remove"></i></a></li>
+              <li><a href="javascript:;" class="" id="cronbtn">加入对比<i  class="removelii glyphicon glyphicon-remove"></i></a></li>
+              <li><a href="javascript:;" class="" id="cronbtn">加入对比<i  class="removelii glyphicon glyphicon-remove"></i></a></li>
+          </ul>
+       </div>
+    </div>
+    
+    <div class="S_W" id="ContrastDetail" style="position:relative;display:none;">
+      <div id="S_charts" class="S_W" style="height:400px;">
+      </div>
+      <div class="clear"></div>
+      <div class="S_W" style="margin-top:20px;background:#fff;">
+          <ul class="nav nav-tabs" role="tablist">
+               <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">基本面</a></li>
+               <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">市场表现</a></li>
+           </ul>
+
+  <!-- Tab panes -->
+         <div class="tab-content">
+           <div role="tabpanel" class="tab-pane active" id="home">
+                   <table id="table" data-striped="true" data-search="true" data-trim-on-search="true" data-show-toggle="true"
+                    data-show-columns="true" data-show-export="true"></table>
+           </div>
+           <div role="tabpanel" class="tab-pane" id="profile"> 
+                <table id="table1" data-striped="true" data-search="true" data-trim-on-search="true"  data-show-toggle="true"
+                    data-show-columns="true" data-show-export="true"></table>
+            </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="S_W">
+      <div style="height: 180px;">
+        <div class="f_logo">
+          搜百倍
+        </div>
+        <br/>
+        <div class="f_desc">
+          专注于发现和挖掘ICO信息,展示多维度分析结果
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="content/app.js"></script>
+</body>
+
+</html>
