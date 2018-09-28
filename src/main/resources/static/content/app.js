@@ -35,22 +35,29 @@ $(function(){
     } : vCallback, nDelay);
   };
   window.setInterval.isPolyfill = true;
- }  
-      var data = [
-      { label: "anders", category: "" },
-      { label: "andreas", category: "" },
-      { label: "antal", category: "" },
-      { label: "annhhx10", category: "Products" },
-      { label: "annk K12", category: "Products" },
-      { label: "annttop C13", category: "Products" },
-      { label: "anders andersson", category: "People" },
-      { label: "andreas andersson", category: "People" },
-      { label: "andreas johnson", category: "People" }
-    ];
-     $('#S_ICOSearch').catcomplete({
-      delay: 0,
-      source: data
+ }
+    AjaxGetData('/getCoins',{},'get',function (data) {
+        //alert(data);
+        // var data1 = [
+        //     { label: "anders", category: "" },
+        //     { label: "andreas", category: "" },
+        //     { label: "antal", category: "" },
+        //     { label: "annhhx10", category: "Products" },
+        //     { label: "annk K12", category: "Products" },
+        //     { label: "annttop C13", category: "Products" },
+        //     { label: "anders andersson", category: "People" },
+        //     { label: "andreas andersson", category: "People" },
+        //     { label: "andreas johnson", category: "People" }
+        // ];
+        $('#S_ICOSearch').catcomplete({
+            delay: 0,
+            source: JSON.parse(JSON.stringify(data))
+        });
+    },function (err) {
+        showBox("操作提示", "获取token信息失败!", 'warning', true);
+        console.log(err);
     });
+
     //更多选项下 下拉框操作
     $('#tabAll a').hover(function(){
      if(tabAllCleartimeout!=undefined){
@@ -439,19 +446,19 @@ $(function(){
 
 //    }).done().fail();
 //  }
- function AjaxGetData(url, params, callback, failCallBack) {
+ function AjaxGetData(url, params,type, callback, failCallBack) {
     params.random = Math.random();
     $.ajax({
         url: url,
-        type: "get",
+        type: type,
         data: params,
-        dataType: "json",
+        dataType: "text",
         async: true
     }).done(function (data) {
         callback(data);
     }).fail(function (err) {
         failCallBack(err);
-        console.log(err);
+       // console.log(err);
         //error success  warning
 
     });
@@ -541,7 +548,7 @@ $(function(){
      titData[titData.length]={id:element,name1:1+Math.round(Math.random()*100),name2:2+Math.round(Math.random()*100)
          ,name3:3+Math.round(Math.random()*100),name4:4+Math.round(Math.random()*100)
          ,name5:5+Math.round(Math.random()*100)}
-    }
+   }
    for (let index = 0; index < tit1.length; index++) {
     let element = tit1[index];
      tit1Data[tit1Data.length]={id:element,name1:1+Math.round(Math.random()*100),name2:2+Math.round(Math.random()*100)

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -28,7 +29,24 @@ public class appController {
     public String index(){
         return "/app/index";
     }
-
+    @RequestMapping(value="/getCoins",method = {RequestMethod.GET})
+    @ResponseBody
+    public String getCoins(){
+        //当界面返回成功后 直接请求此方法 获取全部的币种信息 label 是币种名称
+        //category 为不同类型做后续扩展 当前可以全部为''
+        String data = "["+
+        "{ label: 'anders', category: '' },"+
+        "{ label: 'andreas', category:'' },"+
+        "{ label: 'antal', category: '' },"+
+        "{ label: 'annhhx10', category: 'Products' },"+
+        "{ label: 'annk K12', category: 'Products' },"+
+        "{ label: 'annttop C13', category: 'Products' },"+
+        "{ label: 'anders andersson', category: 'People' },"+
+        "{ label: 'andreas andersson', category: 'People' },"+
+        "{ label: 'andreas johnson', category: 'People' }"+
+    "]";
+      return data;
+    }
 
     /*@RequestMapping("/restList")
     @ResponseBody
