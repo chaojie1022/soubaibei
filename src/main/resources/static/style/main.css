@@ -1,0 +1,57 @@
+ body{
+	font: 12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #666;
+    background: #fff;
+	margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+.S_Wrap{
+	width:70%;
+    margin:auto;
+	min-width:1024px;
+    background: red;
+}
+@media screen and (min-width:1230px) and (max-width:1410px)
+{
+.crumbs-bar {
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 5px;
+    z-index: 6;
+	}
+.crumbs-nav {
+    line-height: 24px;
+    padding-right: 125px;
+}
+.clearfix{*zoom:1}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.crumbs-nav-main {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.crumbs-nav-item {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.crumbs-arrow {
+    float: left;
+    margin-right: 5px;
+    font-family: "Helvetica Neue","Hiragino Sans GB",SimSun,serif;
+    font-style: normal;
+}
+.menu-drop {
+    height: 24px;
+}
+} 

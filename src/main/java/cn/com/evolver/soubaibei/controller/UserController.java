@@ -26,10 +26,10 @@ public class UserController {
     UserService userService;
 
 
-    @RequestMapping("/")
+  /*  @RequestMapping("/")
     public String index(){
         return "redirect:/users/list";
-    }
+    }*/
 
     @RequestMapping("/list")
     public String list(Model model){

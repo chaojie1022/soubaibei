@@ -1,0 +1,205 @@
+.S_content{
+    position: relative;
+    padding-top:40px; 
+    font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-size: 14px;
+    color: #333;
+    
+}
+.ICORow{
+    position: relative; 
+    float: left;
+    background: #FFF;
+    widows: 980px;
+    box-sizing: border-box;
+    border: 1px solid rgba(121, 121, 121, 1);
+}
+.ICOCWrap{
+        background: #fff;
+        height: 355px;
+        border: 1px solid rgba(121, 121, 121, 1);
+        overflow: hidden;
+}
+.ICOContrast{
+    position: relative;
+    float: right;
+    right: 0;
+    width: 200px;
+    margin-top: -22px;
+}
+.ICOContrastRow{
+    width: 200px;
+    border-bottom: 1px solid rgba(121, 121, 121, 1);
+    height: 71px;
+}
+.ICOContrastRow>div{
+    float: left;
+   
+}
+.ICOCRemoveAll{
+    border-width: 0px;
+    padding: 7px 12px;
+    height: 36px;
+    background: inherit;
+    background-color: rgba(26, 188, 156, 1);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'FontAwesome Regular', 'FontAwesome';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+.ICOCRemoveAlli{
+   margin-left: 3px;
+   position:relative;
+   top: 2.5;
+}
+#ICOCRemoveAll:hover{
+    background-color: #f30213;
+}
+#ICOContrast:hover{
+    background-color: #449d44;
+}
+.ICOCRowTit{
+    padding-top: 10px;
+    font: initial;
+    padding-left: 2px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight: 700;
+    font-size: 25px;
+    color: #333;
+}
+.ICOCRowTittext{
+    padding-left: 3px;
+    margin-top: -4px;
+    font-size: 16px;
+}
+.ICOCRowI{
+    font: initial;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.ICOCRowI:hover i{
+    color:  #f30213;
+}
+.ICORD_name{
+   height: 36px;
+    font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    color: #009966;
+    font-size: 26px;
+    line-height: 36px;
+}
+.ICORD_desc{
+ font:initial;
+ font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+ color: #333;
+ height: 36px;
+ font-weight: 700;
+}
+.ICORD_udesc{
+    float: left;
+    padding-left:50px; 
+    padding-top:15px; 
+}
+.ICORD_udescJ{
+  font: initial;
+  font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+  color: #333;
+  font-style: normal;
+  font-weight: 700;
+}
+.ICORD_udesc>div{
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+}
+.ICORowimg{
+ float: left;
+ text-align: center;
+ width: 71px;
+}
+.ICORowdetail{
+ float: left;
+  width: 650px;
+}
+.ICORowdetail>div{
+  float: left;  
+}
+.ICORowchart{
+  float: left;
+  width: 220px;
+}
+.ICOExplain{
+    padding: 1px;
+}
+.ICOExplain>div{
+   float: left;
+}
+.ICORowbut{
+    border-width: 0px;
+    width: 93px;
+    padding: 4px 7px;
+    height: 30px;
+    background: inherit;
+    background-color: rgba(26, 188, 156, 1);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'FontAwesome Regular', 'FontAwesome';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+.ICORowbut i{
+        font-size: 16px;
+    position: relative;
+    top: 3;
+    left: 2;
+}
+.ICORowbut:hover{
+   background-color: #449d44;
+}
+.footer{
+    position:relative; 
+    visibility: visible;
+    margin-top:40px; 
+    height: 40px;
+    border-top: 2px solid #ffa63c;
+    text-align:center;
+}
+.f_logo{
+    position: relative;
+
+     font: initial;
+     font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+     font-weight: 700;
+     font-style: normal;
+     font-size: 20px;
+     text-align: left;
+     width: 100px;
+     margin-top:20px; 
+}
+.f_desc{
+    position: relative;
+   font: initial;
+     font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+     font-weight: 540;
+     font-style: normal;
+     font-size: 12px;
+     width: 100px;
+     margin-top:-13px; 
+}
