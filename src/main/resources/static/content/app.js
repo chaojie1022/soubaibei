@@ -36,27 +36,45 @@ $(function(){
   };
   window.setInterval.isPolyfill = true;
  }
-    AjaxGetData('/getCoins',{},'get',function (data) {
-        //alert(data);
-        // var data1 = [
-        //     { label: "anders", category: "" },
-        //     { label: "andreas", category: "" },
-        //     { label: "antal", category: "" },
-        //     { label: "annhhx10", category: "Products" },
-        //     { label: "annk K12", category: "Products" },
-        //     { label: "annttop C13", category: "Products" },
-        //     { label: "anders andersson", category: "People" },
-        //     { label: "andreas andersson", category: "People" },
-        //     { label: "andreas johnson", category: "People" }
-        // ];
+
         $('#S_ICOSearch').catcomplete({
-            delay: 0,
-            source: JSON.parse(JSON.stringify(data))
+            delay: 700,
+            source: function(request, response) {
+                $.ajax({
+                    url: "/getCoins",
+                    dataType: "text",
+                    data: {
+                        coins: request.term
+                    },
+                    success: function( data ) {
+                        response( $.map( JSON.parse(data), function( item ) {
+                            return {
+                                label: item.label.split('(')[0],
+                                category:item.category
+                            }
+                        }));
+                    }
+                });
+            },
+            select:function(event, item){
+                $('#S_ICOSearch').val(item.item.label.split('(')[0]);
+                return false;
+            }
         });
-    },function (err) {
-        showBox("操作提示", "获取token信息失败!", 'warning', true);
-        console.log(err);
-    });
+   var tokenfunc=function () {
+       AjaxGetData('/getTokenCNY',{},'get',function (data) {
+           let coins=$('.S_H_ps_Con');
+           data=JSON.parse(data);
+           $(coins[0]).text('￥ '+data.btc);
+           $(coins[1]).text('￥ '+data.eth);
+           $(coins[2]).text('￥ '+data.eos);
+       },function (err) {
+         //  showBox("操作提示", "获取token信息失败!", 'warning', true);
+           console.log(err);
+       });};
+       tokenfunc();
+   var tokenCNY=setInterval(tokenfunc,60000);
+
 
     //更多选项下 下拉框操作
     $('#tabAll a').hover(function(){
@@ -72,7 +90,7 @@ $(function(){
           clearTimeout(tabAllCleartimeout);
       }
       tabAllCleartimeout=setTimeout(tabAllmleave,1000,e.currentTarget.id,e.currentTarget.dataset.id);
-    })
+    });
     //更多选项下 下拉框操作显示后触发hover
     $('#tabAllChild div').hover(()=>{},function(e){
         if(e.toElement!=null&&e.toElement.dataset.id!=undefined){
@@ -81,7 +99,7 @@ $(function(){
       }}else{
       tabAllCleartimeout=setTimeout(tabAllmleave,1000,e.currentTarget.dataset.parentid,e.currentTarget.id);
       }    
-})
+     });
     //更多选项下 下拉框操作显示后鼠标离开
     function tabAllmleave(mleaveid,mleavechildid){
        $('#'+mleaveid).removeClass('S_l_a_bt').children('i').removeClass('glyphicon-minus').addClass("glyphicon-plus"); ;
@@ -194,7 +212,8 @@ $(function(){
       }
     }
   $('#marketbtn').click(function(){
-   SetCondDate('2','4','markettext1','markettext2');
+
+    SetCondDate('2','4','markettext1','markettext2');
   });
   $('#ROIbtn').click(function(){
    SetCondDate('3','7','ROItext1','ROItext2');
@@ -204,14 +223,14 @@ $(function(){
     $('#cond').html('');
   });
   //循环加入查询清单
-  function ICORowData(){
+  function ICORowData(icorowdata){
     var ICORowbut=$('.ICORowbut');
     if(ICORowbut.length>0){
         ICORowbut.unbind();
     }
     $('.S_content').css('visibility','hidden');
     let icorowContent='';
-    let icorowdata=[{a1:'~/../image/102.jpeg',a2:'EOS1',a3:'eos1',b1:'47.51',b2:'5.4',b3:'53亿',b4:'7',b5:'2017-07-02'
+   /*  icorowdata=[{a1:'~/../image/102.jpeg',a2:'EOS1',a3:'eos1',b1:'47.51',b2:'5.4',b3:'53亿',b4:'7',b5:'2017-07-02'
       ,c1:'https://eos.io/',c2:'EOS',c3:' IO is software that introduces a blockchain architecture designed to enable vertical....'
       ,c4:'425亿',c5:'主网上线',c6:'智能合约',c7:'5653(+7)',c8:'13952/+231',c9:'422/2.4%'
       ,d1:'220,206,197,197,196,211,211,207,209,209,208,210,211,222,222,226,228,242,239,240,240,246,244,244,243,234,234,227'
@@ -252,8 +271,8 @@ $(function(){
       ,c1:'https://eos.io/',c2:'EOS',c3:' IO is software that introduces a blockchain architecture designed to enable vertical....'
       ,c4:'425亿',c5:'主网上线',c6:'智能合约',c7:'5653(+7)',c8:'13952/+231',c9:'422/2.4%'
      ,d1:'220,206,197,197,196,211,211,207,209,209,208,210,211,222,222,226,228,242,239,240,240,246,244,244,243,234,234,227'}];
+*/
 
-  
    
     for (var index = 0; index < icorowdata.length; index++) {
       var element = icorowdata[index];
@@ -421,6 +440,11 @@ $(function(){
             showBox("操作提示", "请输入正确的数字!", 'warning', true);
             $('#'+id2).focus();
             return;
+        }else {
+            if(Number(id2val)<=Number(id1val)){
+                showBox("操作提示", "请输入合理的区间范围!", 'warning', true);
+                return;
+            }
         }
     }
     var s='<div data-type="'+flag+'" data-value="'+flg+'" class="cond cond_s">'+id1val+'~'+id2val+'<div class="Closecond" onclick="removecond(this)"> <i  class="glyphicon glyphicon-remove"></i></div></div>';
