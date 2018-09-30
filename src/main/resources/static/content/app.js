@@ -57,10 +57,25 @@ $(function(){
                 });
             },
             select:function(event, item){
-                $('#S_ICOSearch').val(item.item.label.split('(')[0]);
+                let label=item.item.label.split('(')[0];
+                $('#S_ICOSearch').val(label);
+                AjaxGetData('/getTokenDetail',{token:label,page:-1},'get',function (data) {
+                    ICORowData(data);
+                },function (err) {
+                    console.log(err);
+                });
                 return false;
             }
         });
+   $('#S_but_Search').click(function () {
+       if($('#S_ICOSearch').val()!=''){
+           AjaxGetData('/getTokenDetail',{token:$('#S_ICOSearch').val(),page:-1},'get',function (data) {
+               ICORowData(data);
+           },function (err) {
+               console.log(err);
+           });
+       }
+   });
    var tokenfunc=function () {
        AjaxGetData('/getTokenCNY',{},'get',function (data) {
            let coins=$('.S_H_ps_Con');
@@ -194,7 +209,7 @@ $(function(){
       }
       }
    } 
-   ICORowData();
+  // ICORowData();
 
    //查询条件其它点击事件对应方法
     function SWrapClick(e){
@@ -219,15 +234,40 @@ $(function(){
    SetCondDate('3','7','ROItext1','ROItext2');
   });
     //清除高级搜索所有条件
-  $('.eliminateCriteria').click(function(){
+  $('.removeCondT').click(function(){
     $('#cond').html('');
   });
+  //通过高级搜索做查询
+    $('.searchCondT').click(function(){
+       $('#ContrastDetailTab').css('display','none');
+       let conddiv=$('#cond').children('div');
+       let strCond='';
+       if(conddiv.length>0){
+        for (let i = 0; i < conddiv.length; i++) {
+            if(i==conddiv.length-1){
+                strCond+=conddiv[i].dataset.type+'|'+conddiv[i].dataset.value;
+            }else{
+                strCond+=conddiv[i].dataset.type+'|'+conddiv[i].dataset.value+';';
+            }
+        }
+        AjaxGetData('/getCoinsDetail',{token:strCond,page:-1},'get',function (data) {
+               ICORowData(data);
+           },function (err) {
+               console.log(err);
+           });
+
+       }
+    });
   //循环加入查询清单
-  function ICORowData(icorowdata){
+  function ICORowData(icorowData){
+    $('#ContrastDetailTab').css('display','none');
     var ICORowbut=$('.ICORowbut');
     if(ICORowbut.length>0){
         ICORowbut.unbind();
     }
+      icorowData=JSON.parse(icorowData);
+    let tatolCount=icorowData.totalCount;
+    let icorowdata=icorowData.token;
     $('.S_content').css('visibility','hidden');
     let icorowContent='';
    /*  icorowdata=[{a1:'~/../image/102.jpeg',a2:'EOS1',a3:'eos1',b1:'47.51',b2:'5.4',b3:'53亿',b4:'7',b5:'2017-07-02'
@@ -357,6 +397,13 @@ $(function(){
   //清除对比框所有条件
   $('#ICOCRemoveAll').click(function(){
     $('.ICOCWrap').html('');
+  });
+  //开始对比
+  $('#ICOContrast').click(function () {
+      $('#searchdis').css('display','none');
+      $('#ContrastDetailTab').css('display','block');
+       GetEcharts();
+       GetTable();
   });
   //打开对比界面的已选条件对应的下拉框
     $('#cronbtnOC').hover(function(){
@@ -489,7 +536,7 @@ $(function(){
  }
 
  function GetEcharts(){
-     $('#searchdis').css('display','none');
+   // $('#searchdis').css('display','none');
    $('#ContrastDetail').css('display','block');
    var mycharts = echarts.init(document.getElementById('S_charts'));
   var option = {
