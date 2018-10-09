@@ -1,17 +1,26 @@
 package cn.com.evolver.soubaibei.domain.vo;
 
 import lombok.Getter;
-import lombok.Setter;
+import org.springframework.data.domain.Sort;
 
-@Setter
+
 @Getter
 public class Page {
 
     private Integer pageSize;
+
     private Integer pageNumber;
-    private String sortBy;
-    private boolean isSortAsc = false;
 
+    private Sort sort;
 
+    public Page(int pageSize,int pageNumber,String sortBy, boolean isSortAsc){
+        this.pageSize = pageSize;
+        this.pageNumber = pageNumber;
+        if(isSortAsc){
+            this.sort = new Sort(Sort.Direction.DESC,sortBy);
+            return;
+        }
+        this.sort = new Sort(Sort.Direction.ASC,sortBy);
 
+    }
 }
