@@ -1,6 +1,7 @@
 package cn.com.evolver.soubaibei.controller;
 
 import cn.com.evolver.soubaibei.domain.po.Project;
+import cn.com.evolver.soubaibei.domain.vo.Result;
 import cn.com.evolver.soubaibei.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,16 @@ public class AppsController {
         return "app/index";
     }
 
-    @RequestMapping("/getCoins")
-    public List<Project> getProjects(String searchStr){
-        return projectService.findByTokenNameLike(searchStr);
+    @RequestMapping("/getProjects")
+    public Result<List<Project>> getProjects(String searchStr){
+        Result<List<Project>> result = new Result<>();
+        result.setStatus(200);
+        result.setMessage("success");
+        result.setT(projectService.findByTokenNameLike(searchStr));
+        return result;
     }
+
+
+
+
 }
