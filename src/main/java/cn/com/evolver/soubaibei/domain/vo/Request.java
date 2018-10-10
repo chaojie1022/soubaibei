@@ -7,4 +7,6 @@ public class Request<T> {
     private Integer id;
     private String code;
     private T body;
+
+
 }

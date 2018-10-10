@@ -26,7 +26,7 @@ public class Page {
     private boolean isSortAsc = false;
 
     @Getter
-    private Sort sort = new Sort(Sort.Direction.DESC);
+    private Sort sort;
 
     private Pageable pageable;
 
@@ -34,8 +34,10 @@ public class Page {
     public void initPageable(){
         if(StringUtils.isEmpty(sortBy)){
             this.pageable = PageRequest.of(pageNumber-1,pageSize);
+            return;
         }
-        if(isSortAsc){
+        this.sort = new Sort(Sort.Direction.DESC,sortBy);
+        if(this.isSortAsc){
             this.sort = new Sort(Sort.Direction.ASC,sortBy);
         }
         this.pageable = PageRequest.of(pageNumber-1,pageSize,this.getSort());
@@ -48,9 +50,7 @@ public class Page {
         this.pageSize = pageSize;
         this.pageNumber = pageNumber;
         this.sortBy = sortBy;
-        if(isSortAsc){
-            this.sort = new Sort(Sort.Direction.ASC,sortBy);
-        }
+        this.isSortAsc = isSortAsc;
         initPageable();
     }
 
