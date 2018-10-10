@@ -1,6 +1,7 @@
 package cn.com.evolver.soubaibei.controller;
 
 import cn.com.evolver.soubaibei.domain.po.Project;
+import cn.com.evolver.soubaibei.domain.vo.Page;
 import cn.com.evolver.soubaibei.domain.vo.Result;
 import cn.com.evolver.soubaibei.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,11 +26,18 @@ public class AppsController {
 
     @RequestMapping("/getProjects")
     public Result<List<Project>> getProjects(String searchStr){
-        Result<List<Project>> result = new Result<>();
-        result.setStatus(200);
-        result.setMessage("success");
-        result.setT(projectService.findByTokenNameLike(searchStr));
-        return result;
+        try {
+            Result<List<Project>> result = new Result<>();
+            result.setStatus(200);
+            result.setMessage("success");
+            Page page = new Page(0, 10, "created_time", true);
+            result.setT(projectService.findByTokenNameLike(searchStr, page));
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
 
