@@ -10,7 +10,7 @@
             return 'Loading, please wait...';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return pageNumber + ' rows per page';
+            return pageNumber + ' rows per pageReq';
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return 'Showing ' + pageFrom + ' to ' + pageTo + ' of ' + totalRows + ' rows';

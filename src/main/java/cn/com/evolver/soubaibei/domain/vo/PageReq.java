@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 
-public class Page {
+public class PageReq {
 
     @Setter
     @Getter
@@ -15,7 +15,7 @@ public class Page {
 
     @Setter
     @Getter
-    private Integer pageNumber = 1;
+    private Integer pageNumber = 0;
 
     @Setter
     @Getter
@@ -33,20 +33,20 @@ public class Page {
 
     public void initPageable(){
         if(StringUtils.isEmpty(sortBy)){
-            this.pageable = PageRequest.of(pageNumber-1,pageSize);
+            this.pageable = PageRequest.of(pageNumber,pageSize);
             return;
         }
         this.sort = new Sort(Sort.Direction.DESC,sortBy);
         if(this.isSortAsc){
             this.sort = new Sort(Sort.Direction.ASC,sortBy);
         }
-        this.pageable = PageRequest.of(pageNumber-1,pageSize,this.getSort());
+        this.pageable = PageRequest.of(pageNumber,pageSize,this.getSort());
     }
 
-    public Page(){
+    public PageReq(){
 
     }
-    public Page(int pageNumber,int pageSize,String sortBy, boolean isSortAsc){
+    public PageReq(int pageNumber, int pageSize, String sortBy, boolean isSortAsc){
         this.pageSize = pageSize;
         this.pageNumber = pageNumber;
         this.sortBy = sortBy;

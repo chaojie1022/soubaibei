@@ -24,7 +24,7 @@
     <tr>
         <td>formatRecordsPerPage</td>
         <td>pageNumber</td>
-        <td>'%s records per page'</td>
+        <td>'%s records per pageReq'</td>
     </tr>
     <tr>
         <td>formatShowingRows</td>

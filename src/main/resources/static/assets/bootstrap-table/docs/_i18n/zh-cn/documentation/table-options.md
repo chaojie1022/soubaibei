@@ -236,21 +236,21 @@
     </tr>
     <tr>
         <td>pageNumber</td>
-        <td>data-page-number</td>
+        <td>data-pageReq-number</td>
         <td>Number</td>
         <td>1</td>
         <td>如果设置了分页，首页页码。</td>
     </tr>
     <tr>
         <td>pageSize</td>
-        <td>data-page-size</td>
+        <td>data-pageReq-size</td>
         <td>Number</td>
         <td>10</td>
         <td>如果设置了分页，页面数据条数。</td>
     </tr>
     <tr>
         <td>pageList</td>
-        <td>data-page-list</td>
+        <td>data-pageReq-list</td>
         <td>Array</td>
         <td>[10, 25, 50, 100, All]</td>
         <td>如果设置了分页，设置可供选择的页面数据条数。设置为 All 或者 Unlimited，则显示所有记录。</td>

@@ -173,7 +173,7 @@
     </tr>
     <tr>
         <td>onPageChange</td>
-        <td>page-change.bs.table</td>
+        <td>pageReq-change.bs.table</td>
         <td>number, size</td>
         <td>
         当页面更改页码或页面大小时触发。

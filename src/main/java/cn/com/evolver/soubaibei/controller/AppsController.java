@@ -1,15 +1,14 @@
 package cn.com.evolver.soubaibei.controller;
 
 import cn.com.evolver.soubaibei.domain.po.Project;
-import cn.com.evolver.soubaibei.domain.vo.Page;
+import cn.com.evolver.soubaibei.domain.vo.PageReq;
 import cn.com.evolver.soubaibei.domain.vo.Result;
 import cn.com.evolver.soubaibei.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "app")
@@ -25,22 +24,18 @@ public class AppsController {
     }
 
     @RequestMapping("/getProjects")
-    public Result<List<Project>> getProjects(String searchStr){
+    public Result<Page<Project>> getProjects(String searchStr){
         try {
-            Result<List<Project>> result = new Result<>();
+            Result<Page<Project>> result = new Result<>();
             result.setStatus(200);
             result.setMessage("success");
-            Page page = new Page(1, 10, "createdTime", true);
-            result.setT(projectService.findByTokenNameLike(searchStr, page));
+            PageReq pageReq = new PageReq(1, 1, "createdTime", false);
+            result.setBody(projectService.findByNameLikeOrCodeLikeOrTokenNameLike(searchStr, pageReq));
             return result;
         }catch (Exception e){
             e.printStackTrace();
             return null;
         }
-
     }
-
-
-
 
 }

@@ -57,7 +57,7 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `resource` - Issues with helpful resources to improve Bootstrap Table.
 - `update to latest version` - Issues need to update to latest version in order to be fixed.
 
-For a complete look at our labels, see the [project labels page](https://github.com/wenzhixin/bootstrap-table/labels).
+For a complete look at our labels, see the [project labels pageReq](https://github.com/wenzhixin/bootstrap-table/labels).
 
 
 ## Bug reports

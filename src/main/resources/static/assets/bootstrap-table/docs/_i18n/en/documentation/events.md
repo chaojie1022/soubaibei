@@ -181,9 +181,9 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
     </tr>
     <tr>
         <td>onPageChange</td>
-        <td>page-change.bs.table</td>
+        <td>pageReq-change.bs.table</td>
         <td>number, size</td>
-        <td>Fires when change the page number or page size.</td>
+        <td>Fires when change the pageReq number or pageReq size.</td>
     </tr>
     <tr>
         <td>onSearch</td>

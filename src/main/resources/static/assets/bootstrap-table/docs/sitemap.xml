@@ -10,10 +10,10 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    {% for page in site.html_pages %}
-    {% if page.layout != "home" %}
+    {% for pageReq in site.html_pages %}
+    {% if pageReq.layout != "home" %}
     <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
+        <loc>{{ site.url }}{{ pageReq.url }}</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>

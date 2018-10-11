@@ -284,7 +284,7 @@
     </tr>
     <tr>
         <td>selectPage</td>
-        <td>page</td>
+        <td>pageReq</td>
         <td>跳到指定的页。</td>
     </tr>
     <tr>

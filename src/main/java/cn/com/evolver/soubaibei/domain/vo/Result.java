@@ -16,7 +16,7 @@ public class Result<T> {
 
     @Setter
     @Getter
-    private T t;
+    private T body;
 
     @Setter
     @Getter

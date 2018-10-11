@@ -267,7 +267,7 @@ Sintaxis para llamar a un método: `$('#table').bootstrapTable('method', paramet
     </tr>
     <tr>
         <td>selectPage</td>
-        <td>page</td>
+        <td>pageReq</td>
         <td>Ir a una página en especifico.</td>
     </tr>
     <tr>

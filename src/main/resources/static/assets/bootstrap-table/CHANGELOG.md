@@ -37,7 +37,7 @@ ChangeLog
 - feat(export extension): add `exportFooter` option
 - feat(multiple-sort extension): add `showMultiSortButton` option
 - feat(filter-control extension): add `searchOnEnterKey` option
-- feat(page-jumpto extension): add `page-jumpto` extension
+- feat(pageReq-jumpto extension): add `pageReq-jumpto` extension
 - feat(resizable extension): add `resizeMode` option
 - feat(sticky-header extension): add `Bootstrap v4.0` support
 - feat(treegrid extension): add `treegrid` extension
@@ -55,7 +55,7 @@ ChangeLog
 - fix(js): fix #2424, from html with checkbox bug
 - fix(js): fix #2385, checkbox render bug with formatter
 - fix(js): fix #750, showRow and hideRow bug
-- fix(js): fix #2387, page list bug
+- fix(js): fix #2387, pageReq list bug
 - fix(js): decrement totalRows on remove if using server side pagination
 - fix(js): bug in the calculation of toolbar and pagination heights
 - feat(js): fix #2414, add `paginationLoop` option
@@ -100,7 +100,7 @@ ChangeLog
 - fix(js): onSearch event is not fire when we press the arrows keys
 - fix(js): fix fromHtml error
 - fix(js): fix event cannot work when some columns are hideen
-- fix(js): remove page size and number when pagination is false
+- fix(js): remove pageReq size and number when pagination is false
 - fix(js): remove getFieldIndexFromColumnIndex because it cause events bug
 - fix(js): fix getSelections method bug
 - fix(js): update records to rows
@@ -158,7 +158,7 @@ ChangeLog
 - [bug] Fixed year computation on cookie extension.
 - [bug] Fixed ReorderRows init when reorderable is false.
 - [bug] Fix #1660: removed powerpoint type of export extension.
-- [enh] Added `title` attribute to pagination controls defining the page number.
+- [enh] Added `title` attribute to pagination controls defining the pageReq number.
 - [enh] Added `escape` option.
 - [enh] Added `searchOnEnterKey` option.
 - [enh] Added `updateFormatText` method.
@@ -245,7 +245,7 @@ ChangeLog
 - [enh] Added `getScrollPosition`, `removeAll`, `removeByUniqueId` methods.
 - [bug] Fix double header bug after table show from hidden.
 - [bug] Fix #279: scrollWidth bug.
-- [enh] `getData` method support to get the current page data.
+- [enh] `getData` method support to get the current pageReq data.
 - [enh] Added 'getAllSelections' method to get checked rows across all pages.
 - [enh] Added `ro-RO` locale.
 - [enh] Added `table-no-bordered` class to remove table-bordered style.
@@ -287,7 +287,7 @@ ChangeLog
 - [bug] Fix bug of ellipsis string.
 - [bug] Fix pageList smartDisplay.
 - [bug] Fix #188: Export Button is not shown only use `showExport=true`.
-- [bug] Fix page-change event params bug.
+- [bug] Fix pageReq-change event params bug.
 - [enh] Add limit and offset params only if pagination is activated.
 - [enh] Add `ajaxOptions` option to custom $.ajax options.
 - [enh] Add a toggle pagination toolbar button.
@@ -325,7 +325,7 @@ ChangeLog
 - [bug] Fix `minimumCountColumns` option init error.
 - [bug] Fix #161: `undefined` or `null` string sort bug.
 - [bug] Fix #171: IE disabled button can be clicked bug.
-- [bug] Fix #185: Reset the page to the first page when changing the url with `refresh` method.
+- [bug] Fix #185: Reset the pageReq to the first pageReq when changing the url with `refresh` method.
 - [bug] Fix #202: updateRow method keep the scroll position.
 - [enh] Add `smartDisplay` option.
 - [enh] Add `searchAlign` and `toolbarAlign` options.
@@ -429,7 +429,7 @@ ChangeLog
 ### 1.1.1
 
 - Remove `bootstrapVerion` option.
-- Add `data-page-list` attribute.
+- Add `data-pageReq-list` attribute.
 - Fix search data error.
 - Non case sensitive search in client side.
 - Added support for Danish translation.
@@ -489,7 +489,7 @@ ChangeLog
 - Update the `pageList` default.
 - Add `search` option.
 - Add `destroy` method.
-- Add page list support.
+- Add pageReq list support.
 
 ### 1.0.1
 

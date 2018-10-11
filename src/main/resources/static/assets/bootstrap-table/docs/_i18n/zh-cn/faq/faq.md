@@ -23,7 +23,7 @@ $(function () {
 对于合并的表格，当你使用刷新，点击下一页或者切换列的显示，合并的表格会变回去，我们可以监听一下的事件来解决这个问题，代码如下：
 
 ```js
-$table.on('load-success.bs.table column-switch.bs.table page-change.bs.table search.bs.table', function () {
+$table.on('load-success.bs.table column-switch.bs.table pageReq-change.bs.table search.bs.table', function () {
     $table.bootstrapTable('mergeCells', {...});
 });
 ```

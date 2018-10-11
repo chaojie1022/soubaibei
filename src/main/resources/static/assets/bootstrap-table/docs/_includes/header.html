@@ -6,10 +6,10 @@
 <meta name="author" content="Zhixin Wen, and Bootstrap table contributors">
 
 <title>
-  {% if page.layout == "home" %}
-    {% t page.title %}
+  {% if pageReq.layout == "home" %}
+    {% t pageReq.title %}
   {% else %}
-    {% t page.title %} &middot; Bootstrap Table
+    {% t pageReq.title %} &middot; Bootstrap Table
   {% endif %}
 </title>
 

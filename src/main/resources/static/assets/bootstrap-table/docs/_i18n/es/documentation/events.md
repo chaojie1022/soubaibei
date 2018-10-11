@@ -160,7 +160,7 @@
     </tr>
     <tr>
         <td>onPageChange</td>
-        <td>page-change.bs.table</td>
+        <td>pageReq-change.bs.table</td>
         <td>number, size</td>
         <td>Se ejecuta cuando se cambia el número de página o el tamaño de la página.</td>
     </tr>

@@ -50,7 +50,7 @@ To get started, check out:
 
 ### Manual download
 
-Use [Releases page](https://github.com/wenzhixin/bootstrap-table/releases) or [the source](https://github.com/wenzhixin/bootstrap-table/archive/master.zip).
+Use [Releases pageReq](https://github.com/wenzhixin/bootstrap-table/releases) or [the source](https://github.com/wenzhixin/bootstrap-table/archive/master.zip).
 
 ### Bower
 

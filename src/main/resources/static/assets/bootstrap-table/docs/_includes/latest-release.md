@@ -36,7 +36,7 @@
 - feat(export extension): add `exportFooter` option
 - feat(multiple-sort extension): add `showMultiSortButton` option
 - feat(filter-control extension): add `searchOnEnterKey` option
-- feat(page-jumpto extension): add `page-jumpto` extension
+- feat(pageReq-jumpto extension): add `pageReq-jumpto` extension
 - feat(resizable extension): add `resizeMode` option
 - feat(sticky-header extension): add `Bootstrap v4.0` support
 - feat(treegrid extension): add `treegrid` extension

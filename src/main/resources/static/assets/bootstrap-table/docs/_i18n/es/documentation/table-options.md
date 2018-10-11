@@ -218,21 +218,21 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
     </tr>
     <tr>
         <td>pageNumber</td>
-        <td>data-page-number</td>
+        <td>data-pageReq-number</td>
         <td>Number</td>
         <td>1</td>
         <td>Cuando se habilita la paginación, inicializa el número de página.</td>
     </tr>
     <tr>
         <td>pageSize</td>
-        <td>data-page-size</td>
+        <td>data-pageReq-size</td>
         <td>Number</td>
         <td>10</td>
         <td>Cuando se habilita la paginación, inicializa el tamaño de la página.</td>
     </tr>
     <tr>
         <td>pageList</td>
-        <td>data-page-list</td>
+        <td>data-pageReq-list</td>
         <td>Array</td>
         <td>[10, 25, 50, 100, All]</td>
         <td>Cuando se habilita la paginación, inicializa la lista de cantidad de registros por página.</td>

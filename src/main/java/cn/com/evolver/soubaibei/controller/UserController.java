@@ -76,7 +76,7 @@ public class UserController {
         Result<List<User>> result = new Result<>();
         result.setStatus(Result.STATUS_SUCCESS);
         result.setMessage(String.valueOf(users==null?0:users.size())+"users");
-        result.setT(users);
+        result.setBody(users);
         return result;
     }
 

@@ -13,7 +13,7 @@ Use Plugin: [bootstrap-table-cookie](https://github.com/wenzhixin/bootstrap-tabl
 ### cookie
 
 * type: Boolean
-* description: Set true to save the state of a table (its paging position, ordering state, records per page).
+* description: Set true to save the state of a table (its paging position, ordering state, records per pageReq).
 * default: `false`
 
 ### cookieExpire
@@ -26,7 +26,7 @@ Use Plugin: [bootstrap-table-cookie](https://github.com/wenzhixin/bootstrap-tabl
 ### cookiePath
 
 * type: String
-* description: you can tell the browser what path the cookie belongs to. By default, the cookie belongs to the current page.
+* description: you can tell the browser what path the cookie belongs to. By default, the cookie belongs to the current pageReq.
 * default: `null`
 
 ### cookieDomain
@@ -44,7 +44,7 @@ Use Plugin: [bootstrap-table-cookie](https://github.com/wenzhixin/bootstrap-tabl
 ### cookieIdTable
 
 * type: String
-* description: You must set this property if the cookie property is enabled to set an unique cookie with an identifier for each table in your page or project. You must set this property because we need create cookies with an identifier.
+* description: You must set this property if the cookie property is enabled to set an unique cookie with an identifier for each table in your pageReq or project. You must set this property because we need create cookies with an identifier.
 * default: ``
 
 ### cookieStorage

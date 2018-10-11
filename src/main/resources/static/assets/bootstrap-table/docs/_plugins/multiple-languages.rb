@@ -66,7 +66,7 @@ module Jekyll
     end
 
     def render(context)
-      if "#{context[@key]}" != "" #Check for page variable
+      if "#{context[@key]}" != "" #Check for pageReq variable
         key = "#{context[@key]}"
       else
         key = @key
@@ -89,7 +89,7 @@ module Jekyll
   module Tags
     class LocalizeInclude < IncludeTag
       def render(context)
-        if "#{context[@file]}" != "" #Check for page variable
+        if "#{context[@file]}" != "" #Check for pageReq variable
           file = "#{context[@file]}"
         else
           file = @file

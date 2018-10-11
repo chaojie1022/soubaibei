@@ -51,7 +51,7 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 ### printIgnore
 
 * type: Boolean
-* description: set true to hide this column in the printed page. 
+* description: set true to hide this column in the printed pageReq. 
 * default: `false`
 
 ### printFormatter

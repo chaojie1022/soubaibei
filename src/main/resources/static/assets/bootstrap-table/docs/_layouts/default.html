@@ -10,11 +10,11 @@
     <!-- Docs master nav -->
     {% include nav.html %}
 
-    <!-- Docs page layout -->
+    <!-- Docs pageReq layout -->
     <div class="bs-docs-header" id="content">
       <div class="container">
-        <h1>{% t page.title %}</h1>
-        <p>{% t page.lead %}</p>
+        <h1>{% t pageReq.title %}</h1>
+        <p>{% t pageReq.lead %}</p>
       </div>
     </div>
 
@@ -25,16 +25,16 @@
     <div class="container bs-docs-container">
 
       <div class="row">
-        <div class="col-md-{% if page.fullwidth == true %}12{% else %}9{% endif %}"
+        <div class="col-md-{% if pageReq.fullwidth == true %}12{% else %}9{% endif %}"
              role="main"
-             {% if page.slug != "examples" %}data-toggle="sidenav"{% endif %}
+             {% if pageReq.slug != "examples" %}data-toggle="sidenav"{% endif %}
              data-container="#sidenav"
              data-hs="h1,h2"
              data-smart-id="true"
              data-bottom=".bs-docs-footer">
           {{ content }}
         </div>
-        {% unless page.fullwidth == true %}
+        {% unless pageReq.fullwidth == true %}
         <div class="col-md-3">
           <div id="sidenav">
         </div>

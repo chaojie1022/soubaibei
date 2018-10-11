@@ -54,7 +54,7 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>getData</td>
         <td>useCurrentPage</td>
-        <td>Get the loaded data of table at the moment that this method is called. If you set the useCurrentPage to true the method will return the data in the current page.</td>
+        <td>Get the loaded data of table at the moment that this method is called. If you set the useCurrentPage to true the method will return the data in the current pageReq.</td>
         <td>getData</td>
     </tr>
     <tr>
@@ -180,7 +180,7 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>refresh</td>
         <td>params</td>
-        <td>Refresh the remote server data, you can set <code>{silent: true}</code> to refresh the data silently, and set <code>{url: newUrl, pageNumber: pageNumber, pageSize: pageSize}</code> to change the url (optional), page number (optional) and page size (optional). To supply query params specific to this request, set <code>{query: {foo: 'bar'}}</code>.</td>
+        <td>Refresh the remote server data, you can set <code>{silent: true}</code> to refresh the data silently, and set <code>{url: newUrl, pageNumber: pageNumber, pageSize: pageSize}</code> to change the url (optional), pageReq number (optional) and pageReq size (optional). To supply query params specific to this request, set <code>{query: {foo: 'bar'}}</code>.</td>
     </tr>
     <tr>
         <td>refreshOptions</td>
@@ -205,17 +205,17 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>checkAll</td>
         <td>none</td>
-        <td>Check all current page rows.</td>
+        <td>Check all current pageReq rows.</td>
     </tr>
     <tr>
         <td>uncheckAll</td>
         <td>none</td>
-        <td>Uncheck all current page rows.</td>
+        <td>Uncheck all current pageReq rows.</td>
     </tr>
     <tr>
         <td>checkInvert</td>
         <td>none</td>
-        <td>Invert check of current page rows. Triggers onCheckSome and onUncheckSome events.</td>
+        <td>Invert check of current pageReq rows. Triggers onCheckSome and onUncheckSome events.</td>
     </tr>
     <tr>
         <td>check</td>
@@ -301,18 +301,18 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     </tr>
     <tr>
         <td>selectPage</td>
-        <td>page</td>
-        <td>Go to the a specified page.</td>
+        <td>pageReq</td>
+        <td>Go to the a specified pageReq.</td>
     </tr>
     <tr>
         <td>prevPage</td>
         <td>none</td>
-        <td>Go to previous page.</td>
+        <td>Go to previous pageReq.</td>
     </tr>
     <tr>
         <td>nextPage</td>
         <td>none</td>
-        <td>Go to next page.</td>
+        <td>Go to next pageReq.</td>
     </tr>
     <tr>
         <td>togglePagination</td>

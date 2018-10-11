@@ -20,10 +20,10 @@ $(function () {
 
 ### ¿Cuál es la mejor opción para unir celdas?
 
-Para unir celdas, cuando se haga el refresh, se pase a la siguiente página o se muestren/oculten columnas, las celdas unidas se quedarán es su estado normal, no unidas. Se puede escuchar los eventos(on load success, on column switch, on page change y on search) para resolver este problema, ejemplo:
+Para unir celdas, cuando se haga el refresh, se pase a la siguiente página o se muestren/oculten columnas, las celdas unidas se quedarán es su estado normal, no unidas. Se puede escuchar los eventos(on load success, on column switch, on pageReq change y on search) para resolver este problema, ejemplo:
 
 ```js
-$table.on('load-success.bs.table column-switch.bs.table page-change.bs.table search.bs.table', function () {
+$table.on('load-success.bs.table column-switch.bs.table pageReq-change.bs.table search.bs.table', function () {
     $table.bootstrapTable('mergeCells', {...});
 });
 ```

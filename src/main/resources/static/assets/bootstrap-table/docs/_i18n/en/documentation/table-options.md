@@ -284,24 +284,24 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
     </tr>
     <tr>
         <td>pageNumber</td>
-        <td>data-page-number</td>
+        <td>data-pageReq-number</td>
         <td>Number</td>
         <td>1</td>
-        <td>When set pagination property, initialize the page number.</td>
+        <td>When set pagination property, initialize the pageReq number.</td>
     </tr>
     <tr>
         <td>pageSize</td>
-        <td>data-page-size</td>
+        <td>data-pageReq-size</td>
         <td>Number</td>
         <td>10</td>
-        <td>When set pagination property, initialize the page size.</td>
+        <td>When set pagination property, initialize the pageReq size.</td>
     </tr>
     <tr>
         <td>pageList</td>
-        <td>data-page-list</td>
+        <td>data-pageReq-list</td>
         <td>Array</td>
         <td>[10, 25, 50, 100]</td>
-        <td>When set pagination property, initialize the page size selecting list. If you include the 'All' or 'Unlimited' option, all the records will be shown in your table.</td>
+        <td>When set pagination property, initialize the pageReq size selecting list. If you include the 'All' or 'Unlimited' option, all the records will be shown in your table.</td>
     </tr>
     <tr>
         <td>selectItemName</td>
@@ -581,7 +581,7 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>data-maintain-selected</td>
         <td>Boolean</td>
         <td>false</td>
-        <td>True to maintain selected rows on change page and search.</td>
+        <td>True to maintain selected rows on change pageReq and search.</td>
     </tr>
     <tr>
         <td>sortable</td>

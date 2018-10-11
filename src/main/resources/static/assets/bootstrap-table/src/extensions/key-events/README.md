@@ -19,6 +19,6 @@ True to enable the key events. The key event list is:
     * r: It will refresh the table if the showRefresh option is enabled.
     * t: It will toggle the table view if the showToggle option is enabled.
     * p: It will fires the pagination switch if the showPaginationSwitch is enabled.
-    * left: It will go to prev page if the pagination is true.
-    * right: It will go to next page if the pagination is true.
+    * left: It will go to prev pageReq if the pagination is true.
+    * right: It will go to next pageReq if the pagination is true.
 * default: `false`
