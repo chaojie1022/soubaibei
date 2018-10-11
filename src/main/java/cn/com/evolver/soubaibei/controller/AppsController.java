@@ -29,7 +29,7 @@ public class AppsController {
             Result<Page<Project>> result = new Result<>();
             result.setStatus(200);
             result.setMessage("success");
-            PageReq pageReq = new PageReq(1, 1, "createdTime", false);
+            PageReq pageReq = new PageReq(0, 10, "createdTime", false);
             result.setBody(projectService.findByNameLikeOrCodeLikeOrTokenNameLike(searchStr, pageReq));
             return result;
         }catch (Exception e){

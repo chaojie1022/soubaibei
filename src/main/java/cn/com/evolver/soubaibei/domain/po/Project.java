@@ -4,6 +4,7 @@ package cn.com.evolver.soubaibei.domain.po;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "tb_project")
+@EntityListeners(AuditingEntityListener.class)
 public class Project {
 
     @Id
@@ -52,6 +54,11 @@ public class Project {
     private String description;
 
     /**
+     * 以美元为单位的价格
+     */
+    private Float price;
+
+    /**
      * ico募集美元资金
      */
     private Long icoDollar;
@@ -78,15 +85,22 @@ public class Project {
     private Float icoTokensPercent;
 
     /**
+     * 流通Token数量
+     */
+    private Long availableTokenCount;
+
+    /**
      * 流通比例
      */
+    @Transient
     private Float availableTokenPercent;
+
+
 
     /**
      * 总Token数量
      */
     private Long totalTokensCount;
-
 
     /**
      * telegram账号

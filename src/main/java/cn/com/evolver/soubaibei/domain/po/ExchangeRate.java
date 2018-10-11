@@ -10,15 +10,13 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "tb_project_category")
+@Table(name = "tb_exchange_rate")
 @EntityListeners(AuditingEntityListener.class)
-public class ProjectCategory {
+public class ExchangeRate {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-
-    private Integer parentId;
 
     @Column(length = 63)
     private String code;
@@ -26,9 +24,10 @@ public class ProjectCategory {
     @Column(length = 63)
     private String name;
 
-    private String description;
+    private Float rate;
 
-    private Integer level;
+    @Column(length = 63)
+    private String underlying;
 
     @Column(length = 15)
     private String type;
@@ -36,12 +35,11 @@ public class ProjectCategory {
     @Column(length = 15)
     private String status;
 
-    @CreatedDate
     @Column(updatable = false)
+    @CreatedDate
     private Date createdTime;
 
     @LastModifiedDate
     private Date lastModifiedTime;
 
-    private String remark;
 }
