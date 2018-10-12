@@ -18,4 +18,5 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
     public List<ExchangeRate> findAll() {
         return exchangeRateRepository.findAll();
     }
+
 }

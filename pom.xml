@@ -99,6 +99,16 @@
             <version>2.2.2</version>
         </dependency>
 
+        <!-- 缓存 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
 
 
         <!-- 测试模块，包括JUnit、Hamcrest、Mockito -->

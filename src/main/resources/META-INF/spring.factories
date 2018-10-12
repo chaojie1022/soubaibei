@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationListener=cn.com.evolver.soubaibei.listener.ApplicationStartingEventListener,\
+    cn.com.evolver.soubaibei.listener.ApplicationEnvironmentPreparedEventListener,\
+    cn.com.evolver.soubaibei.listener.ApplicationPreparedEventListener,\
+    cn.com.evolver.soubaibei.listener.ApplicationStartedEventListener,\
+    cn.com.evolver.soubaibei.listener.ApplicationReadyEventListener,\
+    cn.com.evolver.soubaibei.listener.ApplicationFailedEventListener
