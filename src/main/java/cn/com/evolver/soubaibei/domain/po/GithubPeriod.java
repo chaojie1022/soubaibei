@@ -2,7 +2,6 @@ package cn.com.evolver.soubaibei.domain.po;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -10,20 +9,21 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table
 @EntityListeners(AuditingEntityListener.class)
-public class Github {
+@Table(name = "tb_github_period")
+public class GithubPeriod {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    private Long githubId;
 
     private String name;
 
     private String code;
 
-    private Long projectId;
-
-    private String href;
+    private Long href;
 
     private Integer contributorsCount;
 
@@ -47,18 +47,7 @@ public class Github {
 
     private Integer watchedCount;
 
-    @Column(length = 15)
-    private String type;
-
-    @Column(length = 15)
-    private String status;
-
     @CreatedDate
     @Column(updatable = false)
-    private Date createdTime;
-
-    @LastModifiedDate
-    private Date lastModifiedTime;
-
-
+    private Date createdDate;
 }
