@@ -15,7 +15,7 @@ import java.util.Date;
 public class MarketCurrent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long projectId;
@@ -31,8 +31,6 @@ public class MarketCurrent {
     private Float price;
 
     private Long circulatingSupply;
-
-    private Date currentTime;
 
     private Long volume;
 

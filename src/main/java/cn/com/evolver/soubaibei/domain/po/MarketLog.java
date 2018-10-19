@@ -14,7 +14,7 @@ import java.util.Date;
 public class MarketLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long projectId;
@@ -30,8 +30,6 @@ public class MarketLog {
     private Float price;
 
     private Long circulatingSupply;
-
-    private Date currentTime;
 
     private Long volume;
 
